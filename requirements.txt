@@ -5,7 +5,7 @@ pandas
 plotly
 Sastrawi
 Sastrawi
-scikit_learn=
+scikit_learn
 seaborn
 streamlit
 tensorflow
