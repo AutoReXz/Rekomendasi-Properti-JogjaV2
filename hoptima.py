@@ -43,6 +43,8 @@ def display_regex_results(query):
     wc = rag.extract_numeric_requirements(query)[1] or 0
     parkir = rag.extract_numeric_requirements(query)[2] or 0
     max_price = rag.extract_numeric_requirements(query)[3] or float('inf')
+    luas_tanah = rag.extract_numeric_requirements(query)[4] or 0
+    luas_bangunan = rag.extract_numeric_requirements(query)[5] or 0
     
     st.subheader("Hasil Regex Numeric :")
     col1, col2 = st.columns(2)
@@ -50,6 +52,7 @@ def display_regex_results(query):
     with col1:
         st.metric("Jumlah Kamar", kamar if kamar > 0 else "Tidak Terdeteksi")
         st.metric("Jumlah Kamar Mandi", wc if wc > 0 else "Tidak Terdeteksi")
+        st.metric("Luas Tanah", f"{luas_tanah} m²" if luas_tanah > 0 else "Tidak Terdeteksi")
     
     with col2:
         st.metric("Slot Parkir", parkir if parkir > 0 else "Tidak Terdeteksi")
@@ -57,6 +60,7 @@ def display_regex_results(query):
             st.metric("Harga Maksimal", f"Rp {max_price:,.0f}")
         else:
             st.metric("Harga Maksimal", "Tidak Terdeteksi")
+        st.metric("Luas Bangunan", f"{luas_bangunan} m²" if luas_bangunan > 0 else "Tidak Terdeteksi")
     
     location = rag.find_location(query)
     st.metric("Lokasi yang Terdeteksi", location if location else "Tidak Terdeteksi")
