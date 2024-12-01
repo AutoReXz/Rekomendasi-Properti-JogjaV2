@@ -107,7 +107,7 @@ if page == "Chat":
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
 
-    if prompt := st.chat_input("Masukkan kriteria properti Anda:"):
+    if prompt := st.chat_input("Contoh : Rumah di sleman dengan 3 kamar tidur dan 2 kamar mandi dibawah 1.5 milyar"):
         st.session_state.messages.append({"role": "user", "content": prompt})
         with st.chat_message("user"):
             st.markdown(prompt)
