@@ -67,7 +67,7 @@ class PropertyRAG:
                 "pleret",
                 "pundong",
                 "sanden",
-                "dayu",
+                "sedayu",
                 "sewon",
                 "srandakan",
             ],
